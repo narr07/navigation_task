@@ -4,7 +4,7 @@ ___
 ## Flutter Bootcamp 2023 with [edspert.id](http://www.edspert.id/) 
 
 ___
-## Navgation
+## Navigation
 
 ![Home Screen](public/ss.png)
 
