@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import 'HobiScreen.dart';
 import 'PendidikanScreen.dart';
 import 'PengalamanScreen.dart';
 import 'ProfilScreen.dart';
@@ -11,7 +12,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 final Uri _instagram = Uri.parse('https://www.instagram.com/narr07/');
 final Uri _behance = Uri.parse('https://www.behance.net/narr07');
-final Uri _web= Uri.parse('https://permadi.tech/');
+final Uri _web = Uri.parse('https://permadi.tech/');
 final Uri _github = Uri.parse('https://github.com/narr07');
 
 class HomeScreen extends StatelessWidget {
@@ -75,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Icon(Icons.account_circle_rounded,
                                     color: Colors.white),
                               ),
-                              Text('Profil'),
+                              Text('Profil Umum'),
                             ],
                           ),
                         ),
@@ -137,13 +138,40 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // hobi
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 50,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return HobiScreen();
+                              }),
+                            );
+                          },
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Icon(Icons.help_outline_rounded,
+                                    color: Colors.white),
+                              ),
+                              Text('Lainya'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-
                         // Instagram
                         GestureDetector(
-                          onTap: (_launchInstagram) ,
+                          onTap: (_launchInstagram),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -167,10 +195,10 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        
+
                         // behance
                         GestureDetector(
-                          onTap: (_launchBehance) ,
+                          onTap: (_launchBehance),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -194,9 +222,9 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                       
+
                         GestureDetector(
-                          onTap: (_launchGithub) ,
+                          onTap: (_launchGithub),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -221,7 +249,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         GestureDetector(
-                          onTap: (_launchWeb) ,
+                          onTap: (_launchWeb),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -258,21 +286,24 @@ class HomeScreen extends StatelessWidget {
 
 Future<void> _launchInstagram() async {
   if (!await launchUrl(_instagram)) {
-    throw Exception('Could not launch $_instagram');
+    throw Exception('Tidak dapat membuka $_instagram');
   }
 }
+
 Future<void> _launchBehance() async {
   if (!await launchUrl(_behance)) {
-    throw Exception('Could not launch $_instagram');
+    throw Exception('Tidak dapat membuka $_behance');
   }
 }
+
 Future<void> _launchGithub() async {
   if (!await launchUrl(_github)) {
-    throw Exception('Could not launch $_instagram');
+    throw Exception('Tidak dapat membuka $_github');
   }
 }
+
 Future<void> _launchWeb() async {
   if (!await launchUrl(_web)) {
-    throw Exception('Could not launch $_instagram');
+    throw Exception('Tidak dapat membuka $_web');
   }
 }
