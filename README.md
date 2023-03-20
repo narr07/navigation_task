@@ -6,14 +6,9 @@ ___
 ___
 ## Navgation
 
-![Home Screen](public/home.jpeg)
+![Home Screen](public/ss.png)
 
-![Profil Screen](public/profil.jpeg)
-
-![Pendidikan Screen](public/pendidikan.jpeg)
-
-![Pengalaman Screen](public/pengalaman.jpeg)
-___
+__
 ## More Info
 
 This project is a starting point for a Flutter application.
