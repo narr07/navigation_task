@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-import 'HobiScreen.dart';
 import 'PendidikanScreen.dart';
 import 'PengalamanScreen.dart';
 import 'ProfilScreen.dart';
@@ -140,33 +139,7 @@ class HomeScreen extends StatelessWidget {
                     ),
 
                     // hobi
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 50,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                return HobiScreen();
-                              }),
-                            );
-                          },
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Icon(Icons.help_outline_rounded,
-                                    color: Colors.white),
-                              ),
-                              Text('Lainya'),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Row(
+                   Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         // Instagram

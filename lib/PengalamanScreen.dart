@@ -14,7 +14,7 @@ class PengalamanScreen extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Ke Home Aja Karena Belum Ada Pengalaman !'),
+          child: Text('Ke Home Aja Karena Belum Ada Pengalaman 🙄 !'),
           onPressed: () {
             Navigator.pop(context);
           },
