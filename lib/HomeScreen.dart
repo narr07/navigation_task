@@ -7,6 +7,13 @@ import 'PengalamanScreen.dart';
 import 'ProfilScreen.dart';
 import 'Warna.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
+final Uri _instagram = Uri.parse('https://www.instagram.com/narr07/');
+final Uri _behance = Uri.parse('https://www.behance.net/narr07');
+final Uri _web= Uri.parse('https://permadi.tech/');
+final Uri _github = Uri.parse('https://github.com/narr07');
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -131,22 +138,109 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 50,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(Icons.home_rounded,
-                                        color: Colors.white),
-                                  ),
-                                  Text('Home'),
-                                ],
+
+                        // Instagram
+                        GestureDetector(
+                          onTap: (_launchInstagram) ,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: kPrimary,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        'assets/png/instagram.png',
+                                        height: 30,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        
+                        // behance
+                        GestureDetector(
+                          onTap: (_launchBehance) ,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: kPrimary,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        'assets/png/behance.png',
+                                        height: 30,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                       
+                        GestureDetector(
+                          onTap: (_launchGithub) ,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: kPrimary,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        'assets/png/github.png',
+                                        height: 30,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: (_launchWeb) ,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: kPrimary,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        'assets/png/website.png',
+                                        height: 30,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -159,5 +253,26 @@ class HomeScreen extends StatelessWidget {
         ),
       ]),
     );
+  }
+}
+
+Future<void> _launchInstagram() async {
+  if (!await launchUrl(_instagram)) {
+    throw Exception('Could not launch $_instagram');
+  }
+}
+Future<void> _launchBehance() async {
+  if (!await launchUrl(_behance)) {
+    throw Exception('Could not launch $_instagram');
+  }
+}
+Future<void> _launchGithub() async {
+  if (!await launchUrl(_github)) {
+    throw Exception('Could not launch $_instagram');
+  }
+}
+Future<void> _launchWeb() async {
+  if (!await launchUrl(_web)) {
+    throw Exception('Could not launch $_instagram');
   }
 }
